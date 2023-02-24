@@ -127,7 +127,7 @@ wserver-autoscaler: This HPA is responsible for automatically scaling the number
 
 That's a high-level overview of the different components that make up our Kubernetes deployment. In the next section, we'll walk through how to deploy this configuration to a Kubernetes cluster.
 
-# Thru the files
+# Explaining all the files content and functionality
 
 ## configmap.yaml
 
