@@ -22,7 +22,7 @@ Prerequisites
 
 Installation
 
-    Download the Windows installer from the Minikube Releases page (https://github.com/kubernetes/minikube/releases)
+    Download the Windows installer from the Minikube Releases page (https://github.com/kubernetes/minikube/releases/)
     Double-click the installer to run it
     Follow the prompts to complete the installation
 
