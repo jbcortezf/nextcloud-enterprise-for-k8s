@@ -134,7 +134,8 @@ That's a high-level overview of the different components that make up our Kubern
 This YAML file defines two ConfigMap objects that hold the PHP configuration files for the Nextcloud application. The first one is for the Apache web server and the second one is for the command-line interface (CLI) version of PHP.
 
 Each ConfigMap has a metadata section that defines a unique name for the object. The data section specifies the contents of the configuration file. In this case, the data section contains the configuration settings for PHP, including the session handling configuration.
-deployment.yaml
+
+## deployment.yaml
 
 This YAML file defines a Deployment object for each of the three containers used in the Nextcloud application: the Nextcloud application container, the Redis container, and the MariaDB container.
 
