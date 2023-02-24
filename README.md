@@ -126,3 +126,34 @@ redis-autoscaler: This HPA is responsible for automatically scaling the number o
 wserver-autoscaler: This HPA is responsible for automatically scaling the number of Nextcloud replicas based on CPU utilization.
 
 That's a high-level overview of the different components that make up our Kubernetes deployment. In the next section, we'll walk through how to deploy this configuration to a Kubernetes cluster.
+
+# Thru the files
+
+## configmap.yaml
+
+This YAML file defines two ConfigMap objects that hold the PHP configuration files for the Nextcloud application. The first one is for the Apache web server and the second one is for the command-line interface (CLI) version of PHP.
+
+Each ConfigMap has a metadata section that defines a unique name for the object. The data section specifies the contents of the configuration file. In this case, the data section contains the configuration settings for PHP, including the session handling configuration.
+deployment.yaml
+
+This YAML file defines a Deployment object for each of the three containers used in the Nextcloud application: the Nextcloud application container, the Redis container, and the MariaDB container.
+
+The metadata section of each Deployment object defines a unique name for the object. The spec section specifies the details of the deployment, including the number of replicas, the image to use for the container, and the ports to expose.
+
+Each Deployment object also specifies a PodTemplate in the spec section. The PodTemplate defines the specification for the pods that will be created by the deployment.
+
+## service.yaml
+
+This YAML file defines three Service objects that expose the Nextcloud application, Redis, and MariaDB containers to the network.
+
+Each Service object has a metadata section that defines a unique name for the object. The spec section specifies the type of service (in this case, a ClusterIP service), the ports to expose, and the selector used to identify the target pods.
+
+The selector field is used to match the service to the pods that it should route traffic to. In this case, the selector matches the labels that were applied to the pods by the corresponding Deployment objects.
+
+## autoscaling.yaml
+
+This YAML file defines two HorizontalPodAutoscaler objects that automatically scale the number of replicas in the Redis and Nextcloud application deployments based on CPU utilization.
+
+The metadata section of each HorizontalPodAutoscaler object defines a unique name for the object. The spec section specifies the scaleTargetRef (the deployment to scale), the minimum and maximum number of replicas, and the metrics to use for scaling.
+
+In this case, the metrics are based on CPU utilization, and the autoscaler will adjust the number of replicas to maintain an average CPU utilization of 50%.
