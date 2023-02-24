@@ -16,13 +16,17 @@ By running Nextcloud Enterprise on Kubernetes, you can take advantage of the pow
 Prerequisites
 
     Windows 10 Pro, Enterprise, or Education (64-bit)
+
     Hyper-V and Containers Windows features enabled
+
     4GB of RAM or higher
+
     Virtualization support enabled in BIOS
 
 Installation
 
-    Download the Windows installer from the Minikube Releases page (https://github.com/kubernetes/minikube/releases/)
+Download the Windows installer from the Minikube Releases page (https://github.com/kubernetes/minikube/releases/)
+
     Double-click the installer to run it
     Follow the prompts to complete the installation
 
