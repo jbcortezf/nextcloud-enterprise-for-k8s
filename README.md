@@ -22,7 +22,7 @@ Prerequisites
 
 Installation
 
-    Download the Windows installer from the Minikube Releases page
+    Download the Windows installer from the Minikube Releases page (https://github.com/kubernetes/minikube/releases)
     Double-click the installer to run it
     Follow the prompts to complete the installation
 
@@ -72,4 +72,4 @@ Starting Minikube
     Wait for the command to finish executing. This may take a few minutes.
     Run the command kubectl cluster-info to verify that Minikube is running
 
-Note: If you encounter any issues with starting Minikube, please refer to the official Minikube documentation for troubleshooting steps.
+Note: If you encounter any issues with starting Minikube, please refer to the official Minikube documentation (https://minikube.sigs.k8s.io/docs/start/) for troubleshooting steps.
