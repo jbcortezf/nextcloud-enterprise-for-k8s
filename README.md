@@ -101,8 +101,6 @@ Here are the Services we're using in our deployment:
 
     redis: This Service is responsible for exposing the Redis container to the Nextcloud application.
 
-    mariadb: This Service is responsible for exposing the MariaDB container to the Nextcloud application.
-
 ## ConfigMaps
 
 In Kubernetes, a ConfigMap is an object that allows you to store configuration data as key-value pairs. It provides a way to separate configuration from the container image, and can be mounted as a volume in a container.
