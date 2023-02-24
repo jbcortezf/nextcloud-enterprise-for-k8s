@@ -10,12 +10,66 @@ Moreover, Nextcloud Enterprise offers additional features and capabilities that 
 
 By running Nextcloud Enterprise on Kubernetes, you can take advantage of the power and flexibility of both platforms, while providing a scalable and reliable platform for your business or organization. This repository provides deployment files for Nextcloud Enterprise on Kubernetes, along with documentation and resources to help you get started with your deployment. Whether you are a small team or a large organization, running Nextcloud Enterprise on Kubernetes can provide a secure, flexible, and scalable platform for your file sharing and collaboration needs.
 
-Step 3: Start Minikube
+# If you don't have Kubernetes yet, or want to give a try
 
-    Open a terminal.
+Windows
+Prerequisites
 
-    Run the following command to start Minikube:
+    Windows 10 Pro, Enterprise, or Education (64-bit)
+    Hyper-V and Containers Windows features enabled
+    4GB of RAM or higher
+    Virtualization support enabled in BIOS
 
-bash
+Installation
 
-minikube start --vm-driver=hyperkit
+    Download the Windows installer from the Minikube Releases page
+    Double-click the installer to run it
+    Follow the prompts to complete the installation
+
+Starting Minikube
+
+    Open the Command Prompt or PowerShell as Administrator
+    Run the command minikube start
+    Wait for the command to finish executing. This may take a few minutes.
+    Run the command kubectl cluster-info to verify that Minikube is running
+
+Linux
+Prerequisites
+
+    A Linux distribution that supports systemd (such as Ubuntu 16.04 or later)
+    curl installed on the system
+    VirtualBox or KVM installed on the system (depending on the driver you choose)
+
+Installation
+
+    Open a terminal window
+    Run the command curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    Run the command sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+Starting Minikube
+
+    Open a terminal window
+    Run the command minikube start --vm-driver=<driver> where <driver> is either virtualbox or kvm2
+    Wait for the command to finish executing. This may take a few minutes.
+    Run the command kubectl cluster-info to verify that Minikube is running
+
+Mac
+Prerequisites
+
+    macOS 10.12 or later
+    Virtualization support enabled in BIOS
+    Homebrew package manager installed on the system
+
+Installation
+
+    Open a terminal window
+    Run the command brew install minikube
+
+Starting Minikube
+
+    Open a terminal window
+    Run the command minikube start
+    Wait for the command to finish executing. This may take a few minutes.
+    Run the command kubectl cluster-info to verify that Minikube is running
+
+Note: If you encounter any issues with starting Minikube, please refer to the official Minikube documentation for troubleshooting steps.
