@@ -157,3 +157,9 @@ This YAML file defines two HorizontalPodAutoscaler objects that automatically sc
 The metadata section of each HorizontalPodAutoscaler object defines a unique name for the object. The spec section specifies the scaleTargetRef (the deployment to scale), the minimum and maximum number of replicas, and the metrics to use for scaling.
 
 In this case, the metrics are based on CPU utilization, and the autoscaler will adjust the number of replicas to maintain an average CPU utilization of 50%.
+
+## pvcs.yaml
+
+This YAML file defines a persistent volume claim that is used to store the data for Nextcloud. The accessModes field is set to ReadWriteOnce, which means that the volume can be mounted as read-write by a single node. The resources field sets the requested storage size to 10 gigabytes.
+
+When the nc-deployment.yaml file is deployed, it specifies that a volume should be mounted at the /var/www/html/data directory within the Nextcloud container. This volume is backed by the nc-data PVC that is defined in this file.
