@@ -77,3 +77,50 @@ Starting Minikube
     Run the command kubectl cluster-info to verify that Minikube is running
 
 Note: If you encounter any issues with starting Minikube, please refer to the official Minikube documentation (https://minikube.sigs.k8s.io/docs/start/) for troubleshooting steps.
+
+# Understanding the Components
+
+In this section, we'll take a closer look at the different components that make up our Kubernetes deployment.
+## Deployments
+
+In Kubernetes, a Deployment is responsible for managing a set of replicated Pods. It allows you to declaratively manage a set of Pods, and can ensure that a specified number of replicas are running at any given time.
+
+Here are the Deployments we're using in our deployment:
+
+    nextcloud: This Deployment manages the Nextcloud application, and ensures that a certain number of replicas are running at any given time.
+
+    redis: This Deployment manages the Redis container that is responsible for managing the sessions when scaling Nextcloud.
+
+## Services
+
+In Kubernetes, a Service is an abstraction that defines a logical set of Pods and a policy by which to access them. It provides a stable IP address and DNS name to a set of Pods, and can load-balance traffic between them.
+
+Here are the Services we're using in our deployment:
+
+    wserver: This Service is responsible for exposing the Nextcloud application to the outside world. It is a NodePort service, which means that it will listen on a static port on each node in the cluster.
+
+    redis: This Service is responsible for exposing the Redis container to the Nextcloud application.
+
+    mariadb: This Service is responsible for exposing the MariaDB container to the Nextcloud application.
+
+## ConfigMaps
+
+In Kubernetes, a ConfigMap is an object that allows you to store configuration data as key-value pairs. It provides a way to separate configuration from the container image, and can be mounted as a volume in a container.
+
+Here are the ConfigMaps we're using in our deployment:
+
+    php-ini-apache2: This ConfigMap contains the configuration file for PHP that is used by the Apache2 server in the Nextcloud container.
+
+    php-ini-cli: This ConfigMap contains the configuration file for PHP that is used by the command line interface (CLI) in the Nextcloud container.
+
+## HorizontalPodAutoscalers
+
+In Kubernetes, a HorizontalPodAutoscaler (HPA) is responsible for automatically scaling the number of replicas in a Deployment based on CPU utilization.
+
+Here are the HPAs we're using in our deployment:
+
+    redis-autoscaler: This HPA is responsible for automatically scaling the number of Redis replicas based on CPU utilization.
+
+    wserver-autoscaler: This HPA is responsible for automatically scaling the number of Nextcloud replicas based on CPU utilization.
+
+That's a high-level overview of the different components that make up our Kubernetes deployment. In the next section, we'll walk through how to deploy this configuration to a Kubernetes cluster.
