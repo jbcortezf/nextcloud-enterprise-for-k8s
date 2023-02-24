@@ -12,7 +12,7 @@ By running Nextcloud Enterprise on Kubernetes, you can take advantage of the pow
 
 # If you don't have Kubernetes yet, or want to give a try
 
-Windows
+## Windows
 Prerequisites
 
     Windows 10 Pro, Enterprise, or Education (64-bit)
@@ -33,7 +33,7 @@ Starting Minikube
     Wait for the command to finish executing. This may take a few minutes.
     Run the command kubectl cluster-info to verify that Minikube is running
 
-Linux
+## Linux
 Prerequisites
 
     A Linux distribution that supports systemd (such as Ubuntu 16.04 or later)
@@ -53,7 +53,7 @@ Starting Minikube
     Wait for the command to finish executing. This may take a few minutes.
     Run the command kubectl cluster-info to verify that Minikube is running
 
-Mac
+## Mac
 Prerequisites
 
     macOS 10.12 or later
