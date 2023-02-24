@@ -9,3 +9,13 @@ Running Nextcloud Enterprise on Kubernetes offers many benefits for businesses a
 Moreover, Nextcloud Enterprise offers additional features and capabilities that are tailored to the needs of businesses and organizations. It provides enhanced security and compliance features, as well as advanced collaboration and workflow tools, that make it an ideal platform for teams and organizations.
 
 By running Nextcloud Enterprise on Kubernetes, you can take advantage of the power and flexibility of both platforms, while providing a scalable and reliable platform for your business or organization. This repository provides deployment files for Nextcloud Enterprise on Kubernetes, along with documentation and resources to help you get started with your deployment. Whether you are a small team or a large organization, running Nextcloud Enterprise on Kubernetes can provide a secure, flexible, and scalable platform for your file sharing and collaboration needs.
+
+Step 3: Start Minikube
+
+    Open a terminal.
+
+    Run the following command to start Minikube:
+
+bash
+
+minikube start --vm-driver=hyperkit
